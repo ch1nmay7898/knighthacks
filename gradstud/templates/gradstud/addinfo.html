@@ -1,0 +1,214 @@
+{% extends "gradstud/layout.html" %}
+
+{% block body %}
+<a href="{% url 'index' %}">Home</a>
+<h1>Enter the following information:</h1>
+<form action="{% url 'addinfo' %}" method="POST">
+    {% csrf_token %}
+    <br>
+    <table>
+        <tr>
+            <td>
+                <label for="unis">University Attended:</label>
+            </td>
+            <td>
+                <!-- <input list="unis", style="width: 200px;", name="unis"> -->
+                <select name="unis", id="unis">
+                    <option value=1>University of Central Florida</option>
+                    <option value=2>Yale</option>
+                    <option value=1>Harvard</option>
+                    <option value=3>Duke</option>
+                    <option value=4>UC San Diego</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="major">Undergrad Major:</label>
+            </td>
+            <td>
+                <select id="major", name="major">
+                    <option value=3>Computer Science/information Technology</option>
+                    <option value=2>Electrical Engineering/Math</option>
+                    <option value=1>Other</option>
+                    </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="gpa">GPA:</label>
+            </td>
+            <td>
+                <input type="number", name="gpa", style="width: 50px;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="greq">GRE Quants:</label>
+            </td>
+            <td>
+                <input type="number", id="greq", name="greq", min="0", max="100", style="width: 50px;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="grev">GRE Verbal:</label>
+            </td>
+            <td>
+                <input type="number", id="grev", name="grev", min="0", max="100", style="width: 50px;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="greawa">GRE AWA:</label>
+            </td>
+            <td>
+                <input type="number", id="greawa", name="greawa", min="0", max="100", style="width: 50px;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>LORs:</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="lor1n">Name:</label>
+            </td>
+            <td>
+                <input type="text", id="lor1n", name="lor1n", style="width: 150px;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="lor1">Email:</label>
+            </td>
+            <td>
+                <input type="email", id="lor1", name="lor1", style="width: 150px;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="lor2n">Name:</label>
+            </td>
+            <td>
+                <input type="text", id="lor2n", name="lor2n", style="width: 150px;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="lor2">Email:</label>
+            </td>
+            <td>
+                <input type="email", id="lor2", name="lor2", style="width: 150px;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="lor3n">Name:</label>
+            </td>
+            <td>
+                <input type="text", id="lor3n", name="lor3n", style="width: 150px;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="lor3">Email:</label>
+            </td>
+            <td>
+                <input type="email", id="lor3", name="lor3", style="width: 150px;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Work Experience:</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="moe">Months:</label>
+            </td>
+            <td>
+                
+                <select id="moe", name="moe">
+                    <option value=3>24+ months</option>
+                    <option value=2>12 to 24 months</option>
+                    <option value=1>less than 12</option>
+                    </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="type">Type:</label>
+            </td>
+            <td>
+                <select id="type", name="type">
+                    <option value=4>FANG</option>
+                    <option value=3>Other MNC</option>
+                    <option value=2>Mass Recruiter</option>
+                    <option value=1>Other</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Research Experience:</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="moer">Months:</label>
+            </td>
+            <td>
+                <input type="number", id="moer", name="moer", style="width: 50px;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="pubven">Publication Venue:</label>
+            </td>
+            <td>
+                <select id="pubven", name="pubven">
+                    <option value=4>ICML, CVPR, FOCS, Nature, etc.</option>
+                    <option value=3>ICAI, IEEE, ACM, etc</option>
+                    <option value=2>National (Peer reviewed)</option>
+                    <option value=1>Other</option>
+                    </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+            </td>
+        </tr>
+        
+    </table>
+    <br>
+   <input type="submit">
+</form>
+{% endblock %}
